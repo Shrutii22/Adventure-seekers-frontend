@@ -1,0 +1,56 @@
+/* Subtle lift on hover for cards */
+.card-lift {
+  transition: transform 250ms ease, box-shadow 250ms ease, background 250ms ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+}
+
+/* Soft image zoom */
+.image-zoom {
+  transition: transform 400ms ease;
+}
+
+.image-zoom:hover {
+  transform: scale(1.06);
+}
+
+/* Fade up entrance */
+.fade-up {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 600ms ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow on primary buttons */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle at top left,
+    rgba(251, 191, 36, 0.4),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
