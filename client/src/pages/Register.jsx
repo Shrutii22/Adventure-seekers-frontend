@@ -1,6 +1,6 @@
 import { useState } from "react";
 import API from "../services/api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Register() {
   const [form, setForm] = useState({
@@ -29,43 +29,73 @@ function Register() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-xl shadow-md w-96"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          Join TravelConnect 🌍
-        </h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-fuchsia-50 to-rose-50 p-4">
+      <div className="w-full max-w-md">
+        <div className="bg-white backdrop-blur-md bg-opacity-90 border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+          <div className="p-6 text-center border-b border-slate-200">
+            <h2 className="text-3xl font-extrabold text-slate-900">Create your account</h2>
+            <p className="mt-2 text-sm text-slate-500">Get started with TravelConnect in seconds.</p>
+          </div>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          onChange={handleChange}
-          className="w-full mb-4 p-2 border rounded"
-        />
+          <form onSubmit={handleSubmit} className="p-6 space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-slate-600">Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                className="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:border-transparent"
+                placeholder="Your full name"
+                required
+              />
+            </div>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-          className="w-full mb-4 p-2 border rounded"
-        />
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-slate-600">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                className="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:border-transparent"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          className="w-full mb-4 p-2 border rounded"
-        />
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-slate-600">Password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                className="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:border-transparent"
+                placeholder="••••••••"
+                required
+              />
+            </div>
 
-        <button className="w-full bg-green-600 text-white py-2 rounded">
-          Register
-        </button>
-      </form>
+            <button
+              type="submit"
+              className="w-full py-2.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white font-semibold hover:from-fuchsia-700 hover:to-pink-700 transition"
+            >
+              Register
+            </button>
+
+            <p className="text-center text-sm text-slate-500">
+              Already have an account?{' '}
+              <Link to="/login" className="text-pink-600 hover:text-pink-700 font-semibold">
+                Log in
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
