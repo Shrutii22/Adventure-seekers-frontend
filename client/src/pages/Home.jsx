@@ -9,7 +9,7 @@ function Home() {
       <HeroSection />
       <PlacesSection />
       <WhyChooseUs />
-      <Footer />
+     
     </div>
   );
 }
