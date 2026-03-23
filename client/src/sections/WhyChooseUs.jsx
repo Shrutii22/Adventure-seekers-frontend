@@ -7,9 +7,9 @@ function WhyChooseUs() {
       icon: "🧭",
     },
     {
-      title: "Glassmorphism, not guesswork",
+      title: "Travel your way, not the old way",
       description:
-        "A clean, cinematic interface that makes it effortless to browse, shortlist, and book what feels right.",
+        "From last-minute plans to group itineraries, everything adapts to you.",
       icon: "✨",
     },
     {
