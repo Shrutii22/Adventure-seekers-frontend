@@ -1,7 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import PlacesSection from "../components/PlacesSection";
 import WhyChooseUs from "../sections/WhyChooseUs";
-import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -9,7 +8,7 @@ function Home() {
       <HeroSection />
       <PlacesSection />
       <WhyChooseUs />
-     
+
     </div>
   );
 }
